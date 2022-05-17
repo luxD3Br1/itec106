@@ -35,31 +35,7 @@
   				alert("P: "+ player+" C: "+ moves[rand]+" = Tie!");
   				console.log("P: "+ player+" C: "+ comp+" = Tie!");
   			}
-  			else if(player == "Rock" && comp == "Scissors"){
-  				console.log("P: "+ player+" C: "+ comp+" = Player won!");
-  				alert("P: "+ player+" C: "+ comp+" = Player won!");
-  				pscore += 1;
-  				if (pscore == 5) {
-  					won(1);
-  					return;
-  				}
-  				else{
-  					update();
-  				}
-  			}
-  			else if(player == "Scissors" && comp == "Paper"){
-  				console.log("P: "+ player+" C: "+ comp+" = Player won!");
-  				alert("P: "+ player+" C: "+ comp+" = Player won!");
-  				pscore += 1;
-  				if (pscore == 5) {
-  					won(1);
-  					return;
-  				}
-  				else{
-  					update();
-  				}
-  			}
-  			else if(player == "Paper" && comp == "Rock"){
+  			else if(player == "Rock" && comp == "Scissors" || player == "Scissors" && comp == "Paper" || player == "Paper" && comp == "Rock"){
   				console.log("P: "+ player+" C: "+ comp+" = Player won!");
   				alert("P: "+ player+" C: "+ comp+" = Player won!");
   				pscore += 1;
