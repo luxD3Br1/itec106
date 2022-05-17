@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Activity 3</title>
+	<script>
+		let pscore = 0
+		let cscore = 0
+		const moves = ["Rock","Paper","Scissors"]
+		function won(winner){
+			if (winner == 1) {
+			alert("Player Score: "+pscore+" Match Won!");
+			pscore = 0;
+			cscore = 0;
+			document.getElementById('status').innerHTML = "Player 0 | 0 Computer";
+			}
+			else if (winner == 2) {
+			alert("Computer Score: "+cscore+" Match Won!");
+			pscore = 0;
+			cscore = 0;
+			document.getElementById('status').innerHTML = "Player 0 | 0 Computer";
+			}else{
+			alert("Invalid!");
+			}
+		}
+		function update(){
+			document.getElementById('status').innerHTML = "Player "+pscore+" | "+cscore+" Computer";
+		}
+
+		function pp(player) {
+			let rand = Math.round(Math.random() * 2);
+  			comp = moves[rand]
+  			if (player == comp) {
+  				alert("P: "+ player+" C: "+ moves[rand]+" = Tie!");
+  				console.log("P: "+ player+" C: "+ comp+" = Tie!");
+  			}
+  			if(player == "Rock" && comp == "Scissors"){
+  				console.log("P: "+ player+" C: "+ comp+" = Player won!");
+  				alert("P: "+ player+" C: "+ comp+" = Player won!");
+  				pscore += 1;
+  				if (pscore == 5) {
+  					won(1);
+  					return;
+  				}
+  				else{
+  					update();
+  				}
+  			}
+  			else if(player == "Scissors" && comp == "Paper"){
+  				console.log("P: "+ player+" C: "+ comp+" = Player won!");
+  				alert("P: "+ player+" C: "+ comp+" = Player won!");
+  				pscore += 1;
+  				if (pscore == 5) {
+  					won(1);
+  					return;
+  				}
+  				else{
+  					update();
+  				}
+  			}
+  			else if(player == "Paper" && comp == "Rock"){
+  				console.log("P: "+ player+" C: "+ comp+" = Player won!");
+  				alert("P: "+ player+" C: "+ comp+" = Player won!");
+  				pscore += 1;
+  				if (pscore == 5) {
+  					won(1);
+  					return;
+  				}
+  				else{
+  					update();
+  				}
+  			}
+  			else{
+  				console.log("P: "+ player+" C: "+ comp+" = Computer won!");
+  				cscore += 1;
+  				if (cscore == 5) {
+  					won(2);
+  					return;
+  				}
+  				else{
+  					update();
+  				}
+  			}
+		}
+	</script>
+	<style>
+		.main-container {
+			
+			width: 50%;
+			margin: auto;
+			text-align: center;	
+			border: 3px solid #4CAF50;
+		}
+		button {
+			background-color: #4CAF50; 
+  			border: none;
+  			color: white;
+  			padding: 15px 32px 15px;
+  			margin-bottom: 10px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+		}
+		button:hover{
+				transform: scale(1.1);
+				background-color: #489949;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="main-container">
+		<h1>Rock - Paper - Scissors</h1>
+		<h4>Win 5 rounds to be the victor</h4>
+		<p id='status'>Player 0 | 0 Computer</p>
+			<div class="btngrp">
+				<button  value="Rock" onclick="pp('Rock')">Rock</button>
+				<button  value="Paper" onclick="pp('Paper')">Paper</button>
+				<button  value="Scissors" onclick="pp('Scissors')">Scissors</button>
+			</div>
+	</div>
+</body>
+</html>
