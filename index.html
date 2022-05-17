@@ -11,18 +11,16 @@
 		function won(winner){
 			if (winner == 1) {
 			alert("Player Score: "+pscore+" Match Won!");
-			pscore = 0;
-			cscore = 0;
-			document.getElementById('status').innerHTML = "Player 0 | 0 Computer";
 			}
 			else if (winner == 2) {
 			alert("Computer Score: "+cscore+" Match Won!");
+			}
+			else{
+			alert("Invalid!");
+			}
 			pscore = 0;
 			cscore = 0;
 			document.getElementById('status').innerHTML = "Player 0 | 0 Computer";
-			}else{
-			alert("Invalid!");
-			}
 		}
 		function update(){
 			document.getElementById('status').innerHTML = "Player "+pscore+" | "+cscore+" Computer";
